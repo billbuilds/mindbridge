@@ -118,6 +118,12 @@ ${template}
   writeFileSync(join(skillDir, 'SKILL.md'), skillMd, 'utf8');
   ok('~/.copilot/skills/mindbridge/SKILL.md');
 
+  // Also install to ~/.claude/skills/ for Claude Code / Copilot CLI global
+  const claudeSkillDir = join(home, '.claude', 'skills', 'mindbridge');
+  mkdirSync(claudeSkillDir, { recursive: true });
+  writeFileSync(join(claudeSkillDir, 'SKILL.md'), skillMd, 'utf8');
+  ok('~/.claude/skills/mindbridge/SKILL.md');
+
   return skillDir;
 }
 
