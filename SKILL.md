@@ -13,7 +13,17 @@ description: >-
 The cognitive rendering specification for AI-generated content.
 
 Every rule in this document is derived from one of 4 research-backed
-frameworks. When generating content, apply ALL of them simultaneously.
+frameworks. **Select and apply the frameworks that fit the content:**
+
+| Content type | Primary frameworks | Why |
+|---|---|---|
+| Explaining a concept | Feynman + CLT | Needs analogies + chunking |
+| Architecture / flow / comparison | Mayer + Progressive | Needs visuals + layered depth |
+| Reference docs / API | Progressive + CLT | Expert audience, needs structure |
+| Teaching a complex system | All four | Needs everything |
+| Quick answer / fact | CLT only | Keep it short and chunked |
+
+When unsure, default to **CLT + Feynman** (chunk well, explain clearly).
 
 ---
 
