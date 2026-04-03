@@ -1,6 +1,6 @@
 {
   "name": "mindbridge",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Bridge the gap between AI output and human understanding. Teaching AI agents to communicate the way human brains actually learn.",
   "bin": {
     "mindbridge": "cli/index.mjs"
