@@ -1,6 +1,6 @@
 {
   "name": "mindbridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bridge the gap between AI output and human understanding. Teaching AI agents to communicate the way human brains actually learn.",
   "bin": {
     "mindbridge": "cli/index.mjs"
@@ -33,6 +33,9 @@
     "README.md"
   ],
   "type": "module",
+  "scripts": {
+    "postinstall": "node cli/index.mjs install"
+  },
   "engines": {
     "node": ">=18"
   }
