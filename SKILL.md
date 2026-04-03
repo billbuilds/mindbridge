@@ -56,8 +56,12 @@ If you can't explain it simply, you don't understand it well enough.
 
 ### Rules
 
-1. **Plain language first** — Every concept starts with an explanation a
-   smart 12-year-old could follow. No jargon without immediate definition.
+1. **Plain language first** — Start with the simplest accurate explanation.
+   No jargon without immediate definition. Adjust depth to the audience:
+   - Beginner → analogy-heavy, step-by-step
+   - Intermediate → balanced explanation + examples
+   - Expert → concise, skip basics, focus on nuance and edge cases
+   If unsure, default to intermediate.
 
 2. **Analogy before abstraction** — Before showing the technical truth,
    give a real-world analogy.
@@ -131,48 +135,52 @@ asks for it.
 
 ---
 
-## Content Structure (总分)
+## Content Structure
 
-Every piece of content follows a **General → Specific** (总分) structure:
+Choose the structure that fits the **user's intent**, not a fixed template:
 
-### 1. Title
-A single sentence capturing the core idea. Scannable in 2 seconds.
+### Structure A: Teaching (总分) — "explain X", "what is X"
 
-### 2. Introduction
-2–3 sentences in plain language:
-- What this is about
-- Why it matters
-- A grounding analogy if the topic is abstract
+1. **Title** — Core idea in one sentence (2-second scan)
+2. **Introduction** — 2-3 sentences: what, why, analogy if abstract
+3. **Structured Breakdown** — Sections (one idea each), mixed formats
+4. **Visual Aids** — Diagrams next to the text they illustrate
+5. **Examples** — Analogy → concrete instance → contrast
+6. **Takeaway** — 1-2 sentences to remember tomorrow
 
-If key terms are needed, define them here (Pre-training).
+### Structure B: Troubleshooting — "why does X", "X not working"
 
-### 3. Structured Breakdown
-Break into clearly separated sections. Choose the format that best fits
-each section — mix and match freely:
+1. **Symptom** — What the user is seeing (validate understanding)
+2. **Most likely cause** — Start with the most common reason
+3. **Diagnosis** — How to confirm (commands, checks, logs)
+4. **Fix** — Step-by-step solution with code
+5. **Prevention** — How to avoid this in the future (optional)
 
-- **Cards/Lists** — Parallel items, feature comparisons
-- **Tables** — Parameter comparison, attribute listing
-- **Steps** — Processes, workflows, ordered procedures
-- **Collapsible sections** — Deep details, FAQ, optional depth
-- **Callout boxes** — Key conclusions, warnings, tips
-- **Quotes** — Principles, definitions, expert opinions
-- **Side-by-side** — Before/after, comparison
-- **Code blocks** — Code examples with syntax hints
-- **Diagrams** — Flows, architecture, relationships (Mermaid syntax)
+### Structure C: Decision — "X vs Y", "which should I use"
 
-### 4. Visual Aids
-When content involves processes, architecture, or relationships, use
-diagrams. Place them NEXT TO the text they illustrate.
+1. **One-line recommendation** — Lead with the answer
+2. **Comparison table** — Key dimensions side by side
+3. **When to use each** — Concrete scenarios, not abstract criteria
+4. **Trade-offs** — What you give up with each choice
 
-### 5. Examples
-Every abstract concept MUST have a concrete example within 3 paragraphs:
-1. Real-world analogy first ("Think of it like…")
-2. Concrete instance (actual code, config, data)
-3. Contrast if helpful ("Without this → X. With this → Y.")
+### Structure D: Reference / Cheatsheet — "X commands", "X cheatsheet"
 
-### 6. Takeaway
-1–2 sentences the reader will remember tomorrow. The "if you forget
-everything else, remember this" moment.
+1. **Grouped by task** — Not alphabetical, but by what user wants to do
+2. **Minimal explanation** — One-liner per item, copy-paste ready
+3. **No introduction needed** — Jump straight into content
+
+### Format palette
+
+Use the format that best fits each section — mix freely:
+
+- **Tables** — Comparisons, attribute listing
+- **Steps** — Sequential processes
+- **Cards/Lists** — Parallel items
+- **Callout boxes** — Warnings, tips, key conclusions
+- **Code blocks** — With syntax hints
+- **Diagrams** — Flows, architecture (Mermaid syntax)
+- **Collapsible sections** — Optional depth (HTML only)
+- **Math** — Formulas and equations (KaTeX in HTML, inline in Markdown)
 
 ---
 
@@ -192,18 +200,18 @@ everything else, remember this" moment.
 
 Before finalizing any output, verify:
 
-| ✅ | Framework | Check |
-|----|-----------|-------|
-| | CLT | Each section = one idea? |
-| | CLT | Nothing extraneous? |
-| | Feynman | A non-expert could understand every section? |
-| | Feynman | Every abstract concept has a concrete example? |
-| | Mayer | Text paired with visuals where helpful? |
-| | Mayer | Visual cues guide attention to key points? |
-| | Mayer | Tone is conversational, not academic? |
-| | Progressive | Gist available in 30 seconds from title + intro? |
-| | Progressive | Deep details are hidden/collapsible? |
-| | All | Takeaway would stick with the reader tomorrow? |
+| Check | Applies when |
+|-------|-------------|
+| Each section = one idea? | Always |
+| Nothing extraneous? | Always |
+| Depth matches audience level? | Always |
+| Abstract concepts have concrete examples? | Teaching |
+| Text paired with visuals where helpful? | Teaching, Decision |
+| Visual cues guide attention to key points? | Always |
+| Tone is conversational, not academic? | Always |
+| Gist available in 30 seconds from top? | Always |
+| Deep details are hidden/collapsible? | HTML output |
+| Lead with the answer, not the background? | Troubleshooting, Decision |
 
 ---
 
@@ -232,26 +240,22 @@ Examples:
 
 1. **Determine the topic** from the user's input.
 
-2. **Load the learning method:**
-   - Check if a domain-specific `METHOD.md` exists for this topic.
-   - If not, use `domains/general/METHOD.md`.
+2. **Choose the content structure** that fits the user's intent
+   (Teaching, Troubleshooting, Decision, or Reference).
 
-3. **Organize content** following `SPEC.md`:
-   - Title (2-second scan)
-   - Introduction (30-second plain language summary with analogy)
-   - Structured breakdown (mix of formats, chunked, one idea per section)
-   - Visual aids (diagrams if the topic involves processes/relationships)
-   - Concrete examples (analogy → real instance → contrast)
-   - Takeaway (1-2 memorable sentences)
+3. **Select frameworks** from the decision table above based on
+   content type.
 
-4. **Choose output format** automatically:
+4. **Organize content** following the chosen structure.
+
+5. **Choose output format** automatically:
    - If the topic is visual/complex (architecture, flows, comparisons)
      → generate **HTML** and open in browser.
    - If the topic is straightforward or text-heavy
      → output directly in the conversation or generate **Markdown**.
    - When in doubt, prefer HTML — it supports richer presentation.
 
-5. **Apply the quality checklist** from SPEC.md before finalizing.
+6. **Apply the quality checklist** before finalizing.
 
 ---
 
@@ -277,11 +281,12 @@ Examples:
      - Priority: user specifies > recent plan > recent design >
        recent code > recent concept > conversation summary.
 
-2. **Organize content** following `SPEC.md` (总分 structure).
+2. **Organize content** following the appropriate content structure.
 
 3. **Generate a self-contained HTML file:**
    - All CSS inline.
    - Mermaid.js via CDN for diagrams.
+   - KaTeX via CDN for math formulas.
    - Highlight.js via CDN for code blocks.
    - Light, elegant theme: warm off-white background (#FAFAF8),
      serif titles (Georgia), sans-serif body (system-ui), generous
@@ -316,7 +321,7 @@ Examples:
 
 1. **Determine what to render** (same logic as /html).
 
-2. **Organize content** following `SPEC.md` (总分 structure).
+2. **Organize content** following the appropriate content structure.
 
 3. **Generate a Markdown file:**
    - Standard GFM (GitHub Flavored Markdown).
@@ -362,200 +367,95 @@ Same as `/html` with no argument:
 
 - These commands work alongside normal conversation. Users may type them
   at any point.
-- Always reference the specification above for content organization rules.
-- Always reference domain-specific learning strategies when applicable.
-- Always reference the output styling guidance below.
+- All specification, frameworks, content structures, and styling rules
+  are defined in this file.
 - Match the user's language (Chinese input → Chinese output, etc.).
 - Every piece of content must be real — never use placeholders or filler.
 
 ---
 
-# Domain: General Learning
+# Learning Principles
 
-Universal learning methods backed by neuroscience and cognitive psychology.
-These apply to ANY subject. Domain-specific methods build on top of these.
-
----
-
-## Research Basis
-
-| Method | Researcher | Key Finding |
-|--------|------------|-------------|
-| Spaced Repetition | Hermann Ebbinghaus | Memory decays exponentially; reviewing at increasing intervals fights the forgetting curve |
-| Active Recall | Roediger & Karpicke | Testing yourself is 50% more effective than re-reading |
-| Interleaving | Kornell & Bjork | Mixing different topics/types improves discrimination and transfer |
-| Elaborative Interrogation | Pressley et al. | Asking "why?" and "how?" deepens encoding |
-| Concrete Examples | Rawson et al. | Abstract concepts + concrete examples → 2x better retention |
-| Dual Coding | Allan Paivio | Verbal + visual encoding creates two retrieval paths |
-| Desirable Difficulty | Robert Bjork | Harder (but achievable) practice → stronger long-term retention |
+Cognitive techniques to apply when generating educational content.
 
 ---
 
-## Core Principles
+## When Teaching a Concept
 
-### 1. Retrieve, Don't Re-read
+1. **Concrete before abstract** — Show a real example BEFORE the
+   definition. The brain anchors abstract ideas to tangible experiences.
 
-The act of pulling information FROM memory strengthens it far more than
-pushing information INTO memory.
+2. **Ask "why" and "how"** — Don't leave facts hanging. After stating
+   a principle, immediately explain why it's true or how it works.
 
-**AI instruction:** After explaining a concept, pose a question that
-forces the learner to recall what was just taught. Don't immediately
-provide the answer.
+3. **Dual code** — Pair every major concept with a visual (diagram,
+   table, chart). Text + visual creates two retrieval paths.
 
-### 2. Space It Out
+4. **Expose counterintuition** — If something is surprising, call it
+   out: "You might expect X, but actually Y happens because…"
 
-One intense session is far less effective than multiple short exposures
-spread over time.
-
-**AI instruction:** When teaching a multi-part topic, explicitly tell
-the learner what to revisit and when. Suggest a review schedule.
-
-### 3. Interleave Topics
-
-Don't teach A-A-A-B-B-B. Teach A-B-A-B-A-B. Mixing forces the brain
-to discriminate between concepts, which strengthens understanding.
-
-**AI instruction:** When explaining related concepts, alternate between
-them rather than exhausting one before starting another.
-
-### 4. Ask "Why" and "How"
-
-Simply stating a fact is shallow encoding. Asking "why is this true?"
-or "how does this connect to X?" creates deeper memory traces.
-
-**AI instruction:** After stating a principle, immediately follow with
-"Why? Because…" or "How does this work? …" Don't leave facts hanging.
-
-### 5. Concrete Before Abstract
-
-The brain anchors abstract concepts to concrete experiences. Always
-ground theory in a tangible example first.
-
-**AI instruction:** Never introduce an abstract concept without first
-showing a concrete instance. The example comes BEFORE the definition.
-
-### 6. Dual Code Everything
-
-When information is encoded both verbally and visually, it creates two
-independent retrieval paths — making recall significantly more reliable.
-
-**AI instruction:** Pair every major concept with a visual representation
-(diagram, table, chart, or structured layout). Text alone is always
-suboptimal.
-
-### 7. Make It Hard (But Not Too Hard)
-
-Easy tasks feel productive but don't build durable memory. Tasks that
-require effort (but are achievable) create stronger learning.
-
-**AI instruction:** Don't over-simplify. After the initial gentle
-explanation, present the concept with increasing complexity. Challenge
-the learner slightly beyond their comfort zone.
+5. **Build up, don't dump** — Present ideas in the order they need to
+   be understood, not in order of importance.
 
 ---
 
-## AI Instructions Summary
+# HTML Output Style
 
-When teaching ANY topic using this method:
-
-1. Start with a **concrete example** (not a definition)
-2. Explain the underlying **"why"** and **"how"**
-3. Pair text with **visuals** (diagrams, tables, structured layouts)
-4. After explaining, **ask a recall question** before moving on
-5. When covering multiple concepts, **interleave** them
-6. At the end, provide a **spaced repetition schedule** for review
-7. Gradually **increase difficulty** — don't stay at the beginner level
-
----
-
-# Template: Default
-
-The default output style for MindBridge content. Elegant, light, and
-optimized for focused reading.
+Style rules for HTML output. Ignore this section for Markdown output.
 
 ---
 
 ## Visual Identity
 
-- **Feeling:** Like reading a well-typeset magazine article or essay.
-  Clean, calm, intellectual.
-- **Color scheme:** Light / warm tones. Never dark mode by default.
+- **Feeling:** Clean, calm, intellectual. Like a well-typeset article.
+- **Color scheme:** Light / warm tones.
 
 ## Colors
 
 | Role | Value | Usage |
 |------|-------|-------|
-| Background | `#FAFAF8` (warm off-white) | Page background |
+| Background | `#FAFAF8` | Page background |
 | Surface | `#FFFFFF` | Cards, callouts, code blocks |
-| Accent background | `#F0F7FC` | Introduction block, highlights |
+| Accent background | `#F0F7FC` | Introduction block |
 | Text primary | `#2C3E50` | Headings, body text |
-| Text secondary | `#5D6D7E` | Descriptions, secondary info |
-| Text muted | `#95A5A6` | Timestamps, footnotes |
-| Accent blue | `#3498DB` | Links, step numbers, key highlights |
-| Accent orange | `#E67E22` | Warnings, quotes |
-| Accent green | `#27AE60` | Success, positive callouts |
-| Accent red | `#E74C3C` | Errors, danger callouts |
-| Border | `#E8E8E4` | Subtle separators |
+| Text secondary | `#5D6D7E` | Descriptions |
+| Accent blue | `#3498DB` | Links, highlights |
+| Accent orange | `#E67E22` | Warnings |
+| Accent green | `#27AE60` | Success |
+| Accent red | `#E74C3C` | Errors |
+| Border | `#E8E8E4` | Separators |
 
 ## Typography
 
-| Element | Font | Size | Weight |
-|---------|------|------|--------|
-| Title (h1) | Georgia, serif | 2.4em | 700 |
-| Section (h2) | Georgia, serif | 1.6em | 600 |
-| Subsection (h3) | System sans-serif | 1.2em | 600 |
-| Body | Segoe UI, system-ui, sans-serif | 1em | 400 |
-| Code | Cascadia Code, Fira Code, Consolas | 0.9em | 400 |
+| Element | Font | Size |
+|---------|------|------|
+| Title (h1) | Georgia, serif | 2.4em |
+| Section (h2) | Georgia, serif | 1.6em |
+| Body | system-ui, sans-serif | 1em |
+| Code | Cascadia Code, Fira Code, Consolas | 0.9em |
 
 ## Layout
 
-- Max content width: **780px**, centered
-- Line height: **1.8** (generous for readability)
-- Top padding: **60px**
-- Section spacing: **48px** between major sections
-- Paragraph spacing: **16px**
+- Max width: **780px**, centered
+- Line height: **1.8**
+- Section spacing: **48px**
+- `<meta charset="UTF-8">` required for CJK
 
-## Component Styles
+## CDN Dependencies
 
-### Introduction Block
-- Light blue background (`#F0F7FC`)
-- Left border: 3px solid accent blue
-- Slightly larger font (1.15em)
-- Conveys: "This is the gentle onramp"
+- **Mermaid.js** — Diagrams
+- **Highlight.js** — Code syntax highlighting
+- **KaTeX** — Math formulas (`$inline$` and `$$block$$`)
 
-### Cards
-- White background with subtle border
-- Light shadow on hover
-- Used for parallel items
+## Key Components
 
-### Numbered Steps
-- Circular blue number badge (accent blue, white text)
-- White card per step
-- Used for sequential processes
-
-### Callout Boxes
-- Left border: 4px colored by type (blue=info, orange=warn, green=success)
-- Tinted background matching the border color
-- Used for "don't miss this" information
-
-### Collapsible Sections
-- White card with bold summary text
-- Click to expand details
-- Used for optional depth (Progressive Disclosure Layer 3)
-
-### Takeaway Block
-- Dark gradient background (deep blue → accent blue)
-- White text, slightly larger
-- Highlighted keywords in gold (`#F9E79F`)
-- Conveys: "Remember this above all else"
-
-### Diagrams
-- Centered, white card with subtle border
-- Mermaid.js with theme colors matching the page
-- Placed NEXT TO the text they illustrate
+- **Introduction Block** — `#F0F7FC` background, left blue border
+- **Cards** — White, subtle border, hover shadow
+- **Numbered Steps** — Blue circular badge per step
+- **Callout Boxes** — Left colored border (blue/orange/green/red)
+- **Collapsible Sections** — Click to expand (Layer 3 depth)
+- **Takeaway Block** — Dark gradient, white text, gold highlights
 
 ## Responsive
 
-- Below 600px: single-column layout for cards and comparisons
-- Title scales down to 1.8em
-- Padding reduces to 32px 16px
+- Below 600px: single-column, reduced padding, smaller title
