@@ -144,21 +144,44 @@
 <body>
 <div class="container">
 
-  <!-- Title (Layer 0: 2-second scan) -->
-  <h1>{{title}}</h1>
-  <p class="subtitle">{{subtitle}}</p>
+<!--
+  MindBridge CSS Reference Template
+  
+  AI: Read this file for CSS variables, component styles, and
+  layout rules. Then write your own complete HTML using these
+  styles. Do NOT try to fill in placeholders — write the full
+  page from scratch.
+  
+  Key classes:
+  - .container    — max-width wrapper
+  - .subtitle     — secondary text under h1
+  - .summary      — blue-bordered intro block
+  - .callout      — blue-bordered info box
+  - .takeaway     — top-bordered closing section
+  - .detail-content — content inside <details>
+  - .mermaid      — Mermaid diagram container
+-->
 
-  <!-- Summary (Layer 1: 30-second read) -->
+  <!-- Layer 0: Title -->
+  <h1>Page title here</h1>
+  <p class="subtitle">One-line subtitle</p>
+
+  <!-- Layer 1: Summary -->
   <div class="summary">
-    {{summary}}
+    2-3 sentence summary with analogy
   </div>
 
-  <!-- Breakdown (Layer 2: self-paced sections) -->
-  {{content}}
+  <!-- Layer 2: Sections (mix h2, tables, code, diagrams, etc.) -->
+
+  <!-- Layer 3: Collapsible details for optional depth -->
+  <details>
+    <summary>Click to expand</summary>
+    <div class="detail-content">Deep detail here</div>
+  </details>
 
   <!-- Takeaway -->
   <div class="takeaway">
-    {{takeaway}}
+    1-2 memorable sentences
   </div>
 
 </div>

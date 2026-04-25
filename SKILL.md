@@ -194,8 +194,10 @@ Output: A self-contained HTML file with:
 2. **Apply theories.** Always apply the 5 core theories. Check
    each triggered theory's activation condition.
 
-3. **Generate HTML** using `templates/default.html` as the base
-   style. Output is always HTML — no other formats.
+3. **Generate HTML** — Read `templates/default.html` for the CSS
+   and component styles, then generate a self-contained HTML file
+   using those styles. The template is a style reference, not a
+   fill-in-the-blanks form — write the full HTML yourself.
 
 4. **Quality check** against the checklist before finalizing.
 
