@@ -171,6 +171,19 @@ Single entry point. Usage:
 - `/mindbridge` (no argument) — render the most relevant content
   from recent conversation
 
+### Example
+
+Input: `/mindbridge what is a database index`
+
+Output: A self-contained HTML file with:
+- **Title:** "Database Index — How Databases Find Your Data Fast"
+- **Summary:** 2-3 sentences with an analogy ("like a book's table
+  of contents — instead of reading every page, you jump straight
+  to the right one")
+- **Breakdown:** 3-4 sections — what it is, why it helps, when to
+  use one, trade-offs — each with a visual (diagram or table)
+- **Takeaway:** 1-2 memorable sentences
+
 ### Behavior
 
 1. **Determine content.** If a topic is given, use it. If not,
