@@ -155,3 +155,44 @@ Use whatever fits each section — mix freely:
 - Diagrams — flows, architecture, relationships (Mermaid syntax)
 - Collapsible sections — optional depth (HTML only)
 - Math — formulas and equations (KaTeX in HTML)
+
+---
+
+## Command
+
+### /mindbridge
+
+Single entry point. Usage:
+
+- `/mindbridge <topic>` — explain or teach a topic
+- `/mindbridge` (no argument) — render the most relevant content
+  from recent conversation
+
+### Behavior
+
+1. **Determine content.** If a topic is given, use it. If not,
+   analyze the last 3-5 conversation turns and pick the most
+   relevant content. Priority: user-specified > recent concept >
+   recent discussion > conversation summary.
+
+2. **Apply theories.** Always apply the 5 core theories. Check
+   each triggered theory's activation condition.
+
+3. **Choose output format:**
+   - Complex or visual content → **HTML** (self-contained file,
+     open in browser)
+   - Simple or short content → **inline** (directly in
+     conversation)
+   - User can override by saying "用 markdown" or "as HTML" in
+     the conversation.
+
+4. **Quality check** against the checklist before finalizing.
+
+### HTML output
+
+When generating HTML:
+
+- Save to system temp directory: `mindbridge-{slug}.html`
+- Open with default handler (`open` / `xdg-open` /
+  `Start-Process`)
+- Tell the user what was generated and where the file is.
