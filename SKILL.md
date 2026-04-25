@@ -1,10 +1,13 @@
 ---
 name: mindbridge
 description: >-
-  Cognitive rendering engine for AI-generated content. Grounded in 8
-  research-backed learning theories (5 always-on + 3 context-triggered),
-  MindBridge transforms information into formats optimized for how the
-  human brain actually learns. Triggered by: "/mindbridge".
+  Cognitive rendering engine that transforms AI explanations into
+  visually clear, brain-friendly HTML. Use this skill whenever the
+  user asks to explain, teach, or break down any concept — including
+  "what is X", "explain X", "help me understand X", "I don't get X",
+  or any request for a clearer explanation. Also triggers on
+  "/mindbridge". When in doubt about whether to use this skill,
+  use it — it makes any explanation better.
 ---
 
 ## Theories
