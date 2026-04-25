@@ -216,3 +216,16 @@ Before outputting, verify these 6 things. If any answer is no, fix it.
    visually separated?
 6. Could the reader get the gist from just the title + summary
    in under 30 seconds?
+
+---
+
+## Content Guidelines
+
+- **Match language** — Chinese input → Chinese output. English →
+  English.
+- **Tone** — Conversational but precise. Like a great tech blog,
+  not a textbook.
+- **No filler** — Every sentence either teaches or orients. If it
+  does neither, delete it.
+- **No placeholders** — All content is real. Never use "insert X
+  here" or dummy text.
