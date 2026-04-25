@@ -76,3 +76,52 @@ Show the essential first. Reveal complexity only when asked.
 - Layer 2 — Sections (self-paced): self-contained, any reading order.
 - Layer 3 — Details (on-demand): collapsible/expandable.
 - **Max depth: 3 levels.** Never hide info behind more than 3 clicks.
+
+---
+
+## Triggered Theories (Conditional)
+
+These activate only when their conditions are met. Check each one
+before generating content.
+
+### 6. Schema Theory — Bartlett / Piaget
+
+New knowledge must attach to something the reader already knows.
+
+**Activate when:** the conversation reveals the reader's existing
+knowledge, OR when explaining a new technology by comparing it to
+a familiar one.
+
+- **Bridge from known to unknown** — "You already know X. Y is
+  like X, except…" This is different from Feynman's analogies
+  (everyday life → technical). Schema bridges technical → technical.
+- When new info contradicts existing knowledge, call it out
+  explicitly: "Unlike X, Y does NOT…"
+
+### 7. Worked Example Effect — Sweller (extended)
+
+For procedural content, studying a complete worked solution beats
+attempting to solve it yourself.
+
+**Activate when:** the reader needs to reproduce a process — writing
+code, configuring something, following operational steps.
+
+- **Show the complete path first** — Full working example with
+  annotations explaining each step's reasoning, not just the code.
+- **Scaffold fading** — First example: fully annotated. Second:
+  partial hints. Third: reader does it alone.
+- **Expertise reversal** — For expert audiences, detailed
+  walkthroughs become noise. Give only the delta (what's different
+  from what they already know).
+
+### 8. Narrative Theory — Jerome Bruner
+
+Stories are remembered 6-7× better than raw facts.
+
+**Activate when:** content involves a timeline, evolution, decision
+history, or incident postmortem.
+
+- Map to story structure: character (who) → conflict (problem) →
+  resolution (solution + outcome).
+- Don't force stories where they don't fit. API docs and
+  cheatsheets don't need narratives.
