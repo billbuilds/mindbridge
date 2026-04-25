@@ -200,3 +200,19 @@ Summary: white background, `#111` text, gray scale, single accent
 color `#2563EB`. Sans-serif throughout. 720px max width. No
 shadows, no gradients, no decoration that doesn't serve
 comprehension.
+
+---
+
+## Quality Checklist
+
+Before outputting, verify these 6 things. If any answer is no, fix it.
+
+1. Can a non-expert understand the summary without jargon?
+2. Does every abstract concept have a concrete example nearby?
+3. Is there at least one visual element (table, diagram, or
+   structured layout) — no pure text walls?
+4. Does each section stick to ONE idea?
+5. Are related items visually grouped and unrelated items
+   visually separated?
+6. Could the reader get the gist from just the title + summary
+   in under 30 seconds?
