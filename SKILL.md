@@ -20,80 +20,59 @@ When unsure which theories apply, default to **CLT + Feynman + Mayer**.
 
 ## Core Theories (Always-On)
 
-### 1. Cognitive Load Theory (CLT) — John Sweller
+### 1. CLT — John Sweller
 
 Working memory holds ~4 chunks. Respect this limit or lose the reader.
 
-1. **Chunk** — One idea per section. Second idea → new section.
-2. **Cut the noise** — Every sentence earns its place. No filler.
-3. **Pre-train vocabulary** — Define key terms BEFORE using them.
-   Don't force the reader to decode jargon AND learn concepts
-   simultaneously.
-4. **Maximize useful effort** — Reader's brainpower goes to building
-   mental models, not deciphering bad layout.
+- Chunk: one idea per section.
+- Cut the noise: every sentence earns its place.
+- **Pre-train vocabulary** — Define key terms BEFORE using them. Don't
+  force the reader to decode jargon AND learn concepts simultaneously.
+- Maximize useful effort: brainpower goes to mental models, not to
+  deciphering layout.
 
 ### 2. Feynman Technique — Richard Feynman
 
 If you can't explain it simply, you don't understand it.
 
-1. **Plain language first** — Start with the simplest accurate
-   explanation. No jargon without immediate definition.
-   - Beginner → analogy-heavy, step-by-step
-   - Intermediate → balanced explanation + examples
-   - Expert → concise, skip basics, focus on nuance
-   - Default to intermediate when unsure.
-2. **Analogy before abstraction** — Give a real-world anchor before
-   the technical truth.
-3. **Expose the gap** — If something is counterintuitive, say so:
-   "You might expect X, but Y happens because…"
-4. **Build up, don't dump** — Order by how ideas need to be
-   understood, not by importance or chronology.
+- Plain language first. No jargon without immediate definition.
+- **Analogy before abstraction** — Real-world anchor first, technical
+  truth second. AI tends to skip this — always provide an analogy.
+- Expose the gap: "You might expect X, but Y happens because…"
+- **Build up, don't dump** — Order by dependency (understand A before
+  B), not by importance or chronology.
+- **Adjust depth to audience:** beginner → analogy-heavy; intermediate
+  → balanced; expert → concise + edge cases. Default to intermediate.
 
 ### 3. Mayer's Multimedia Learning — Richard Mayer
 
 Words + visuals > words alone. But only when combined correctly.
 
-1. **Multimedia** — Pair text with relevant visuals (diagrams, tables,
-   color-coding). No walls of text.
-2. **Coherence** — Cut anything that doesn't help understanding. No
-   decorative images, no tangential asides.
-3. **Signaling** — Guide attention with visual cues:
-   - **Bold** the key phrase per paragraph
-   - Callout boxes for critical info
-   - Icons sparingly as anchors (⚠️ warning, 💡 insight)
-4. **Spatial contiguity** — Explanation sits NEXT TO the thing it
-   explains. No scrolling back and forth.
-5. **Segmenting** — Reader controls pacing. Use collapsible sections,
-   clear breaks, layered depth.
-6. **Conversational tone** — Use "you", "we", "imagine…" — not
-   academic prose.
+- Pair text with visuals (diagrams, tables, color-coding). No text walls.
+- Coherence: cut anything that doesn't help understanding.
+- **Signaling** — Bold the key phrase per paragraph. Callout boxes for
+  critical info. Icons sparingly (⚠️ 💡).
+- **Spatial contiguity** — Explanation sits NEXT TO the thing it
+  explains. Never make the reader scroll back and forth.
+- Segmenting: reader controls pacing via collapsible sections and breaks.
+- Conversational tone: "you", "we", "imagine…"
 
 ### 4. Gestalt Principles — Wertheimer, Koffka, Köhler
 
-The eye organizes before the mind reads. Use this to your advantage.
+The eye organizes before the mind reads.
 
-1. **Proximity** — Related items physically close = perceived as a
-   group. Unrelated items get more spacing.
-2. **Similarity** — Same category = same visual style (color, size,
-   shape). Readers decode categories before reading words.
-3. **Continuity** — Guide the eye along a natural flow. Use arrows,
-   lines, and alignment to create visual paths.
-4. **Closure** — The brain completes incomplete shapes. Cards and
-   borders don't need to be heavy — subtle cues suffice.
-5. **Figure-ground** — Key information pops from the background
-   through contrast, color blocks, or elevation (shadow).
+- **Proximity** — Related items close together, unrelated items far
+  apart. This is the #1 most violated rule in AI output.
+- Similarity: same category = same visual style.
+- Continuity: guide the eye with arrows, lines, alignment.
+- Figure-ground: key info pops via contrast or elevation.
 
 ### 5. Progressive Disclosure — Nielsen Norman Group
 
 Show the essential first. Reveal complexity only when asked.
 
-1. **Layer 0 — Title** (2-second scan) — "Is this for me?"
-2. **Layer 1 — Summary** (30-second read) — Full picture at high
-   level. 2-3 sentences: what, why, and a grounding analogy.
-3. **Layer 2 — Sections** (self-paced) — Each section is
-   self-contained and independently readable. Mix formats for
-   visual variety.
-4. **Layer 3 — Details** (on-demand) — Deep content lives inside
-   collapsible/expandable elements.
-5. **Max depth: 3 levels.** Never hide info behind more than 3
-   clicks or expansions.
+- Layer 0 — Title (2-second scan): "Is this for me?"
+- Layer 1 — Summary (30-second read): what, why, analogy.
+- Layer 2 — Sections (self-paced): self-contained, any reading order.
+- Layer 3 — Details (on-demand): collapsible/expandable.
+- **Max depth: 3 levels.** Never hide info behind more than 3 clicks.
