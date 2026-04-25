@@ -178,21 +178,25 @@ Single entry point. Usage:
 2. **Apply theories.** Always apply the 5 core theories. Check
    each triggered theory's activation condition.
 
-3. **Choose output format:**
-   - Complex or visual content → **HTML** (self-contained file,
-     open in browser)
-   - Simple or short content → **inline** (directly in
-     conversation)
-   - User can override by saying "用 markdown" or "as HTML" in
-     the conversation.
+3. **Generate HTML** using `templates/default.html` as the base
+   style. Output is always HTML — no other formats.
 
 4. **Quality check** against the checklist before finalizing.
 
 ### HTML output
 
-When generating HTML:
-
 - Save to system temp directory: `mindbridge-{slug}.html`
 - Open with default handler (`open` / `xdg-open` /
   `Start-Process`)
 - Tell the user what was generated and where the file is.
+
+---
+
+## HTML Style
+
+See `templates/default.html` for the complete template with CSS.
+
+Summary: white background, `#111` text, gray scale, single accent
+color `#2563EB`. Sans-serif throughout. 720px max width. No
+shadows, no gradients, no decoration that doesn't serve
+comprehension.
