@@ -125,3 +125,33 @@ history, or incident postmortem.
   resolution (solution + outcome).
 - Don't force stories where they don't fit. API docs and
   cheatsheets don't need narratives.
+
+---
+
+## Content Structure
+
+All output follows a **general → specific** (总分) structure:
+
+1. **Title** — Core idea in one sentence. Scannable in 2 seconds.
+2. **Summary** — 2-3 plain language sentences: what, why, and an
+   analogy if the topic is abstract. Reader gets the full picture
+   in 30 seconds.
+3. **Breakdown** — Chunked sections, one idea each. Mix formats
+   freely (tables, diagrams, code, callouts, steps, cards).
+4. **Takeaway** — 1-2 sentences the reader will remember tomorrow.
+
+Every abstract concept MUST have a concrete example within 3
+paragraphs: analogy first → real instance → contrast if helpful.
+
+### Format palette
+
+Use whatever fits each section — mix freely:
+
+- Tables — comparisons, attribute listing
+- Steps — sequential processes
+- Cards/Lists — parallel items
+- Callout boxes — warnings, tips, key conclusions
+- Code blocks — with language hints for syntax highlighting
+- Diagrams — flows, architecture, relationships (Mermaid syntax)
+- Collapsible sections — optional depth (HTML only)
+- Math — formulas and equations (KaTeX in HTML)
