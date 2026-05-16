@@ -186,20 +186,35 @@ Output: A self-contained HTML file with:
 
 ### Behavior
 
-1. **Determine content.** If a topic is given, use it. If not,
+1. **Scope check.** Before generating, verify the request is ONE
+   clear, bounded topic — a single concept, comparison, process,
+   or principle. If the request fails this check, do NOT generate.
+   Instead, tell the user briefly why, and suggest how to split
+   or clarify:
+
+   - **Multiple topics** → "This covers several separate topics.
+     Let's take them one at a time — which one first?"
+   - **Too vague / abstract** → "This is too broad for a focused
+     explanation. Can you narrow it down? For example: [suggest
+     2-3 specific angles]."
+   - **Not an explanation** → "MindBridge is for explaining
+     concepts. For [planning/listing/brainstorming], let's just
+     talk it through."
+
+2. **Determine content.** If a topic is given, use it. If not,
    analyze the last 3-5 conversation turns and pick the most
    relevant content. Priority: user-specified > recent concept >
    recent discussion > conversation summary.
 
-2. **Apply theories.** Always apply the 5 core theories. Check
+3. **Apply theories.** Always apply the 5 core theories. Check
    each triggered theory's activation condition.
 
-3. **Generate HTML** — Read `templates/default.html` for the CSS
+4. **Generate HTML** — Read `templates/default.html` for the CSS
    and component styles, then generate a self-contained HTML file
    using those styles. The template is a style reference, not a
    fill-in-the-blanks form — write the full HTML yourself.
 
-4. **Quality check** against the checklist before finalizing.
+5. **Quality check** against the checklist before finalizing.
 
 ### HTML output
 
